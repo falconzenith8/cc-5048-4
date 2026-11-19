@@ -1,0 +1,10 @@
+{
+  "name": "geo-room-acoustics",
+  "version": "1.0.0",
+  "description": "Geometric-acoustics virtual room: image-source early reflections, IR generation, real convolution",
+  "type": "module",
+  "scripts": {
+    "test": "node src/tests.js",
+    "serve": "python3 -m http.server 8000"
+  }
+}

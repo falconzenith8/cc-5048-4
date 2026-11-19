@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>几何声学虚拟房间 · 镜像源早期反射仿真</title>
+<style>
+  :root { --bg:#0d1117; --panel:#161b22; --line:#30363d; --fg:#e6edf3; --muted:#8b949e; --accent:#58a6ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; background:var(--bg); color:var(--fg); font-size:13px; }
+  header { padding:12px 20px; border-bottom:1px solid var(--line); }
+  header h1 { margin:0; font-size:17px; }
+  header p { margin:4px 0 0; color:var(--muted); font-size:12px; }
+  .layout { display:grid; grid-template-columns: 320px 1fr; gap:14px; padding:14px 20px; }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px; margin-bottom:14px; }
+  .panel h2 { font-size:13px; margin:0 0 10px; color:var(--accent); }
+  label { display:block; margin:7px 0 3px; color:var(--muted); }
+  input[type=number], select { width:100%; background:#0d1117; border:1px solid var(--line); color:var(--fg); border-radius:5px; padding:5px 7px; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; }
+  .grid3 label { margin:0; }
+  .row { display:flex; gap:8px; align-items:center; }
+  button { background:#21262d; color:var(--fg); border:1px solid var(--line); border-radius:6px; padding:7px 11px; cursor:pointer; font-size:12px; }
+  button:hover { border-color:var(--accent); }
+  canvas { width:100%; border:1px solid var(--line); border-radius:6px; background:#0f1420; display:block; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th, td { border-bottom:1px solid var(--line); padding:5px 6px; text-align:right; white-space:nowrap; }
+  th { color:var(--muted); font-weight:500; position:sticky; top:0; background:var(--panel); }
+  td.faces, th:first-child, td:first-child, td:nth-child(2), td:nth-child(3) { text-align:left; }
+  .tablewrap { max-height:280px; overflow:auto; }
+  .muted { color:var(--muted); }
+  .ok { color:#7ee787; } .err { color:#f85149; }
+  .scrollcol { max-height:70vh; overflow-y:auto; padding-right:6px; }
+  .baseline li, .assumptions li { margin-bottom:6px; line-height:1.5; }
+  input[type=range] { width:100%; }
+  .tag { display:inline-block; background:#21262d; border:1px solid var(--line); border-radius:10px; padding:1px 8px; font-size:11px; color:var(--muted); }
+  #status { margin-top:8px; font-size:12px; min-height:16px; }
+  #testOut { display:none; white-space:pre-wrap; background:#0d1117; border:1px solid var(--line); border-radius:6px; padding:8px; margin-top:8px; font-size:11px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>几何声学虚拟房间：镜像源法早期反射与真实卷积</h1>
+  <p>路径长度 → 到达时间；表面吸收 (1−α) 与球面扩散 1/d → 幅度；非法反射路径逐条几何剔除。非预设混响，全部由房间几何实时计算。</p>
+</header>
+
+<div class="layout">
+  <div>
+    <div class="panel" id="controls">
+      <h2>房间与声源编辑（米）</h2>
+      <label>房间形状</label>
+      <select id="roomType">
+        <option value="rect">矩形房间（凸六面体）</option>
+        <option value="wedge">楔形房间（梯形截面，用于不可见路径测试）</option>
+      </select>
+      <div class="grid3">
+        <label>长 Lx<input type="number" id="dimX" value="6" min="1" max="30" step="0.1"></label>
+        <label>宽 Ly<input type="number" id="dimY" value="4" min="1" max="30" step="0.1"></label>
+        <label>高 Lz<input type="number" id="dimZ" value="3" min="1" max="20" step="0.1"></label>
+      </div>
+      <label>声源 S 坐标</label>
+      <div class="grid3">
+        <label>x<input type="number" id="srcX" value="1" step="0.1"></label>
+        <label>y<input type="number" id="srcY" value="1" step="0.1"></label>
+        <label>z<input type="number" id="srcZ" value="1.5" step="0.1"></label>
+      </div>
+      <label>听点 R 坐标</label>
+      <div class="grid3">
+        <label>x<input type="number" id="rcvX" value="5" step="0.1"></label>
+        <label>y<input type="number" id="rcvY" value="3" step="0.1"></label>
+        <label>z<input type="number" id="rcvZ" value="1.5" step="0.1"></label>
+      </div>
+      <label>各面吸收系数 α（0=全反射，1=全吸收）<input type="number" id="absorption" value="0.2" min="0" max="0.99" step="0.05"></label>
+      <label>材质预设
+        <select id="materialPreset">
+          <option value="custom">自定义（使用上方 α）</option>
+          <option>全反射硬墙</option><option selected>抹灰砖墙</option><option>木质</option><option>吸声软垫</option>
+        </select>
+      </label>
+      <label>最大反射阶次（计算预算）<input type="number" id="maxOrder" value="3" min="1" max="6" step="1"></label>
+      <label>候选序列硬上限 cap<input type="number" id="cap" value="20000" min="100" step="1000"></label>
+      <label class="row"><input type="checkbox" id="airOn"> 启用空气吸收（强度 m，默认 0.01；默认关闭）</label>
+      <input type="number" id="airAtten" value="0.01" min="0" step="0.005" disabled>
+      <div id="status" class="muted"></div>
+    </div>
+
+    <div class="panel">
+      <h2>试听（真实 FFT 卷积，非混响插件）</h2>
+      <label class="row"><input type="checkbox" id="showCulled"> 显示被剔除路径（红色虚线连向非法镜像源）</label>
+      <label>干湿混合：<span id="wetLabel">100% 湿声</span>
+        <input type="range" id="wetMix" min="0" max="100" value="100">
+      </label>
+      <div class="row" style="flex-wrap:wrap; gap:6px; margin-top:8px;">
+        <button id="btnDry">▶ 干声</button>
+        <button id="btnWet">▶ 湿声(卷积)</button>
+        <button id="btnMix">▶ 干湿混合</button>
+        <button id="btnStop">■ 停止</button>
+      </div>
+      <div class="row" style="margin-top:8px;">
+        <button id="btnDownload">下载 WAV</button>
+        <label class="tag" style="cursor:pointer;">载入干声<input type="file" id="btnUpload" accept="audio/*" hidden></label>
+      </div>
+      <p class="muted" style="margin-bottom:0;">默认干声为 1 kHz 指数衰减脉冲；可上传任意音频，按 48 kHz 重采样后与本房间 IR 卷积。</p>
+    </div>
+  </div>
+
+  <div class="scrollcol">
+    <div class="panel">
+      <h2>3D 几何视图（线框）</h2>
+      <canvas id="view3d" width="820" height="420"></canvas>
+    </div>
+
+    <div class="panel">
+      <h2>脉冲响应（峰标注到达时间）</h2>
+      <canvas id="irChart" width="820" height="220"></canvas>
+    </div>
+
+    <div class="panel">
+      <h2>可用路径与到达时间（单位可复核）</h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>类型</th><th>阶</th><th>反射面序列</th><th>路径长(m)</th><th>时间(ms)</th><th>样本位置 n=t·fs</th><th>最近整数样本</th><th>幅度</th></tr></thead>
+          <tbody id="pathRows"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>被剔除的非法路径及原因</h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>阶</th><th>面序列</th><th>剔除原因</th></tr></thead>
+          <tbody id="culledRows"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel baseline" id="baselinePanel">
+      <h2>矩形房间手算基线（与求解器对照）</h2>
+      <div id="baseline"></div>
+    </div>
+
+    <div class="panel baseline">
+      <h2>单位换算与采样落点（可复核）</h2>
+      <ul style="margin:0; padding-left:18px; line-height:1.7;">
+        <li>声速 c = 343 m/s（20°C 空气近似，全程常数）。</li>
+        <li>到达时间：t = d / c，1 m 对应 1/343 = 2.915 ms。</li>
+        <li>采样落点：n = t · f<sub>s</sub> = d · f<sub>s</sub> / c；f<sub>s</sub> = 48000 Hz 时 1 ms = 48 个样本。</li>
+        <li>非整数 n 不四舍五入抹掉：用 16 抽头 Hann 窗 sinc 核把脉冲能量按分数延迟分配到相邻样本，表中同时给出浮点 n 与最近整数样本。</li>
+        <li>幅度：直达声 1/d；反射路径 (Π(1−α)) / d，启用空气吸收时再乘 e^(−m·d)。</li>
+      </ul>
+    </div>
+
+    <div class="panel" id="budgetPanel">
+      <h2>计算预算与阶次限制</h2>
+      <div id="budget"></div>
+    </div>
+
+    <div class="panel assumptions">
+      <h2>模型显式忽略的波动效应</h2>
+      <ul>
+        <li><b>几何声学近似：</b>仅当波长远小于墙面尺寸时成立；忽略衍射（棱边绕射、障板阴影区）与干涉（相位叠加、驻波/模态、梳状滤波）。</li>
+        <li><b>镜面反射：</b>把墙面视为无限光滑平面，忽略散射/扩散与表面粗糙度；实际材料的方向相关反射未建模。</li>
+        <li><b>有限阶早期反射：</b>只计算到设定阶次，不含晚期统计混响（指数衰减尾巴）；不叠加任何随机回声，缺阶即明确报预算超限。</li>
+        <li><b>频率无关吸收：</b>α 为单一标量，忽略材料的频率相关吸收与空气高频吸收（可选空气衰减项默认关闭）。</li>
+        <li><b>点声源/全指向：</b>声源与听点无指向性，忽略人头相关传递函数(HRTF)、立体声定位与多普勒效应。</li>
+        <li><b>凸多面体限制：</b>合法性校验依赖凸性（线段在体内等价于端点在体内）；凹形房间需改用束跟踪/BSP，不在本模型范围。</li>
+        <li>采样落点用 16 抽头 Hann 窗 sinc 分数延迟近似（非理想带限插值），声速取 343 m/s 常数。</li>
+      </ul>
+      <button id="btnTests">运行内置自检说明</button>
+      <div id="testOut"></div>
+    </div>
+  </div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
