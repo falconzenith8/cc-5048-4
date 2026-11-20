@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "node src/tests.js",
+    "build:exhibit": "node scripts/build-exhibit.mjs",
+    "build:exhibit:write": "node scripts/build-exhibit.mjs --write",
     "serve": "python3 -m http.server 8000"
   }
 }

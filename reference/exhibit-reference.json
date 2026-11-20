@@ -1,0 +1,365 @@
+{
+  "generatedAt": "2026-11-20T10:19:01.176Z",
+  "spec": "scenes/echo-hunt.json",
+  "sections": {
+    "start": {
+      "A": {
+        "directValid": true,
+        "first": {
+          "order": 1,
+          "faces": [
+            "南墙 y=0"
+          ],
+          "surfaces": [
+            "南墙 y=0"
+          ],
+          "distance": 5.135172830587107,
+          "timeMs": 14.971349360312265,
+          "relDb": -6.1116678951867245,
+          "passesPartition": false,
+          "sampleNearest": 719
+        }
+      },
+      "B": {
+        "directValid": true,
+        "first": {
+          "order": 2,
+          "faces": [
+            "南墙 y=0",
+            "partition:背面"
+          ],
+          "surfaces": [
+            "南墙 y=0",
+            "partition"
+          ],
+          "distance": 5.1354933817512345,
+          "timeMs": 14.97228391181118,
+          "relDb": -6.836453527717206,
+          "passesPartition": true,
+          "sampleNearest": 719
+        }
+      }
+    },
+    "route-sidewall": {
+      "routeId": "route-sidewall",
+      "gallery": "A",
+      "frames": [
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "first": {
+            "faces": [
+              "南墙 y=0"
+            ],
+            "surfaces": [
+              "南墙 y=0"
+            ],
+            "passesPartition": false,
+            "distance": 5.135172830587107,
+            "timeMs": 14.971349360312265,
+            "relDb": -6.1116678951867245
+          },
+          "audibleCount": 1
+        },
+        {
+          "listener": [
+            7,
+            2.6,
+            1.9
+          ],
+          "first": {
+            "faces": [
+              "南墙 y=0"
+            ],
+            "surfaces": [
+              "南墙 y=0"
+            ],
+            "passesPartition": false,
+            "distance": 5.388877434122993,
+            "timeMs": 15.711012927472282,
+            "relDb": -6.385843814522908
+          },
+          "audibleCount": 1
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.4
+          ],
+          "first": {
+            "faces": [
+              "南墙 y=0"
+            ],
+            "surfaces": [
+              "南墙 y=0"
+            ],
+            "passesPartition": false,
+            "distance": 5.140038910358559,
+            "timeMs": 14.98553618180338,
+            "relDb": -6.092734261156952
+          },
+          "audibleCount": 1
+        }
+      ]
+    },
+    "route-partition": {
+      "routeId": "route-partition",
+      "gallery": "B",
+      "frames": [
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 54.5,
+          "first": null,
+          "audibleCount": 0
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 55.5,
+          "first": null,
+          "audibleCount": 0
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 56.5,
+          "first": {
+            "faces": [
+              "南墙 y=0",
+              "partition:背面"
+            ],
+            "surfaces": [
+              "南墙 y=0",
+              "partition"
+            ],
+            "passesPartition": true,
+            "distance": 5.1354933817512345,
+            "timeMs": 14.97228391181118,
+            "relDb": -6.836453527717206
+          },
+          "audibleCount": 1
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 57.5,
+          "first": {
+            "faces": [
+              "南墙 y=0"
+            ],
+            "surfaces": [
+              "南墙 y=0"
+            ],
+            "passesPartition": false,
+            "distance": 5.135172830587107,
+            "timeMs": 14.971349360312265,
+            "relDb": -6.1116678951867245
+          },
+          "audibleCount": 1
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 58.5,
+          "first": null,
+          "audibleCount": 0
+        }
+      ]
+    },
+    "regenerate": {
+      "checks": {
+        "directStillValid": true,
+        "directDistanceUnchanged": true,
+        "everyVanishedEchoPassedPartition": true,
+        "partitionFirstEchoGone": true,
+        "blockedWallEchoRestored": true
+      },
+      "pass": true,
+      "vanished": [
+        {
+          "order": 2,
+          "faces": [
+            "南墙 y=0",
+            "partition:背面"
+          ],
+          "distance": 5.1354933817512345,
+          "timeMs": 14.97228391181118,
+          "relDb": -6.836453527717206,
+          "passesPartition": true,
+          "sampleNearest": 719
+        }
+      ],
+      "kept": [],
+      "appeared": [
+        {
+          "order": 1,
+          "faces": [
+            "南墙 y=0"
+          ],
+          "distance": 5.135172830587107,
+          "timeMs": 14.971349360312265,
+          "relDb": -6.1116678951867245,
+          "passesPartition": false,
+          "sampleNearest": 719
+        }
+      ]
+    },
+    "checkpoint:route-sidewall": {
+      "routeId": "route-sidewall",
+      "listener": [
+        6.04,
+        2.85,
+        1.27
+      ],
+      "A": {
+        "faces": [
+          "南墙 y=0"
+        ],
+        "timeMs": 15.175200172302361,
+        "distance": 5.20509365909971,
+        "occluder": "screen:正面"
+      },
+      "B": {
+        "faces": [
+          "partition:正面"
+        ],
+        "timeMs": 10.780837580915383,
+        "distance": 3.6978272902539766,
+        "occluder": "screen:正面"
+      },
+      "firstEchoTimeDiffMs": 4.394362591386978,
+      "checks": {
+        "directBlockedInBoth": true,
+        "blockedByScreen": true,
+        "bothKeepAudibleEcho": true,
+        "firstEchoesDistinguishable": true,
+        "distinctFirstSources": true,
+        "firstEchoDoesNotUseScreen": true
+      },
+      "pass": true
+    },
+    "checkpoint:route-partition": {
+      "routeId": "route-partition",
+      "listener": [
+        6.35,
+        2.27,
+        1.33
+      ],
+      "A": {
+        "faces": [
+          "南墙 y=0"
+        ],
+        "timeMs": 13.979675439119863,
+        "distance": 4.795028675618113,
+        "occluder": "screen:正面"
+      },
+      "B": {
+        "faces": [
+          "partition:正面"
+        ],
+        "timeMs": 8.856350651742197,
+        "distance": 3.037728273547574,
+        "occluder": "screen:正面"
+      },
+      "firstEchoTimeDiffMs": 5.1233247873776655,
+      "checks": {
+        "directBlockedInBoth": true,
+        "blockedByScreen": true,
+        "bothKeepAudibleEcho": true,
+        "firstEchoesDistinguishable": true,
+        "distinctFirstSources": true,
+        "firstEchoDoesNotUseScreen": true
+      },
+      "pass": true
+    },
+    "mapping:A": {
+      "gallery": "A",
+      "faces": [
+        "南墙 y=0"
+      ],
+      "surfaces": [
+        "南墙 y=0"
+      ],
+      "distance": 5.135172830587107,
+      "timeMs": 14.971349360312265,
+      "sampleFloat": 718.6247692949888,
+      "sampleNearest": 719,
+      "segmentLengths": [
+        2.3884524793428406,
+        2.7467203512442664
+      ]
+    },
+    "mapping:B": {
+      "gallery": "B",
+      "faces": [
+        "南墙 y=0",
+        "partition:背面"
+      ],
+      "surfaces": [
+        "南墙 y=0",
+        "partition"
+      ],
+      "distance": 5.1354933817512345,
+      "timeMs": 14.97228391181118,
+      "sampleFloat": 718.6696277669366,
+      "sampleNearest": 719,
+      "segmentLengths": [
+        2.379250197589936,
+        1.617879707153683,
+        1.1383634770076156
+      ]
+    },
+    "screenSweep": [
+      {
+        "shift": -0.3,
+        "blocked": true,
+        "diffMs": 0,
+        "pass": false
+      },
+      {
+        "shift": -0.15,
+        "blocked": true,
+        "diffMs": 4.394362591386978,
+        "pass": true
+      },
+      {
+        "shift": 0,
+        "blocked": true,
+        "diffMs": 4.394362591386978,
+        "pass": true
+      },
+      {
+        "shift": 0.15,
+        "blocked": true,
+        "diffMs": 4.394362591386978,
+        "pass": true
+      },
+      {
+        "shift": 0.3,
+        "blocked": true,
+        "diffMs": 4.394362591386978,
+        "pass": true
+      }
+    ]
+  }
+}

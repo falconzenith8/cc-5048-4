@@ -7,6 +7,7 @@ import {
 } from './acoustics.js';
 import { OrbitCamera, drawScene } from './view3d.js';
 import { drawIR } from './chart.js';
+import { mountExhibit } from './exhibit-ui.js';
 
 const $ = (id) => document.getElementById(id);
 const state = {
@@ -264,6 +265,7 @@ function init() {
   $('dimZ').addEventListener('change', clampPoints);
 
   recompute();
+  mountExhibit($('exhibitMount'));
   requestAnimationFrame(function loop() {
     if (state.room) drawScene($('view3d'), state.room, state.S, state.R, state.solution, { camera: state.camera, showCulled: $('showCulled').checked });
     requestAnimationFrame(loop);

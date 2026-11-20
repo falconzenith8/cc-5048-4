@@ -4,6 +4,12 @@ import { rectRoom, wedgeRoom, V } from './geometry.js';
 import { solveRoom } from './solver.js';
 import { buildImpulseResponse, convolveNaive, convolveFFT, makeClick } from './acoustics.js';
 import { dist } from './geometry.js';
+import { buildScene } from './scene.js';
+import { solveScene, surfaceKey } from './scene-solver.js';
+import {
+  compareStart, regenerateWithoutPartition, verifyCheckpoint, solveGallery,
+} from './exhibit.js';
+import { ECHO_HUNT_SPEC } from './exhibit-spec.js';
 
 export function approx(a, b, tol = 1e-6) {
   if (Math.abs(a - b) > tol) throw new Error(`${a} ≈ ${b}（容差 ${tol}）`);
@@ -94,6 +100,71 @@ export function buildChecks() {
     const y = convolveFFT(impulse, ir);
     const idx = Math.round(peaks[0].sampleFloat);
     for (let i = 0; i < idx - 10; i++) approx(y[i], 0, 1e-12);
+  });
+
+  // ---- 听声找隔板展项 ----
+  const S = ECHO_HUNT_SPEC;
+
+  group('7 隔板遮挡求解器', '零厚度板材不透射、入射/出射同侧', () => {
+    const scene = buildScene({
+      id: 't', room: { dims: [6, 4, 3] }, materials: S.materials,
+      source: [1, 1, 1.5], listener: [5, 3, 1.5],
+      panels: [{ id: 'partition', role: 'partition', center: [3, 2, 1.5], width: 2, height: 3, angleDeg: 0 }],
+    });
+    const sol = solveScene(scene, { maxOrder: 2 });
+    for (const r of sol.reflections) {
+      const i = r.faces.findIndex((f) => f.panelId === 'partition');
+      if (i < 0) continue;
+      const f = r.faces[i], q = r.points[i + 1];
+      const nx = f.normal;
+      const inc = { x: q.x - r.points[i].x, y: q.y - r.points[i].y, z: q.z - r.points[i].z };
+      const out = { x: r.points[i + 2].x - q.x, y: r.points[i + 2].y - q.y, z: r.points[i + 2].z - q.z };
+      ok(inc.x * nx.x + inc.y * nx.y + inc.z * nx.z < 0, '入射应在反射侧');
+      ok(out.x * nx.x + out.y * nx.y + out.z * nx.z > 0, '出射应在同侧');
+    }
+  });
+
+  group('8 展项起始位姿', '两厅首回波同刻、来源不同', () => {
+    const cmp = compareStart(S);
+    ok(cmp.A.directValid && cmp.B.directValid, '两厅直达声都成立');
+    ok(cmp.A.first && cmp.A.first.order === 1 && cmp.A.first.faces[0].startsWith('南墙'), 'A 首回波=南墙单次反射');
+    ok(cmp.B.first && cmp.B.first.order === 2, 'B 首回波=两次反射');
+    ok(cmp.B.first.passesPartition, 'B 首回波经过隔板');
+    ok(cmp.B.first.faces.some((n) => n.includes('partition:背面')), 'B 首回波含隔板背面');
+    approx(cmp.A.first.timeMs, cmp.B.first.timeMs, 0.01);
+  });
+
+  group('8 展项起始位姿', '源墙面↔可听片段映射与脉冲样本一致', () => {
+    const a = solveGallery(S, 'A', { maxOrder: 2 }).evaluated.first;
+    const b = solveGallery(S, 'B', { maxOrder: 2 }).evaluated.first;
+    approx(a.timeMs, a.distance / 343 * 1000, 1e-9);
+    approx(a.pulse.sampleFloat, a.timeSec * 48000, 1e-9);
+    equal(a.pulse.sampleNearest, Math.round(a.pulse.sampleFloat));
+    approx(a.segmentLengths.reduce((s, x) => s + x, 0), a.distance, 1e-9);
+    approx(b.segmentLengths.reduce((s, x) => s + x, 0), b.distance, 1e-9);
+    equal(b.segmentLengths.length, 3);
+  });
+
+  group('9 删板重生成', '直达声仍在，只有跨隔板回波消失', () => {
+    const r = regenerateWithoutPartition(S, 'B');
+    ok(r.checks.directStillValid, '直达声仍在');
+    ok(r.checks.directDistanceUnchanged, '直达声距离不变');
+    ok(r.checks.everyVanishedEchoPassedPartition, '消失回波都经过隔板');
+    ok(r.checks.partitionFirstEchoGone, '隔板首回波消失');
+    ok(r.checks.blockedWallEchoRestored, '被隔板挡住的墙面回波重新出现');
+    ok(r.pass, '整体通过');
+  });
+
+  group('10 屏风检查点', '直达声被挡后凭到达时刻辨认展厅', () => {
+    for (const route of S.routes) {
+      const cp = verifyCheckpoint(S, route);
+      ok(cp.checks.directBlockedInBoth, `${route.id} 两厅直达声都被挡`);
+      ok(cp.checks.blockedByScreen, `${route.id} 由屏风遮挡`);
+      ok(cp.checks.bothKeepAudibleEcho, `${route.id} 两厅各留可听路径`);
+      ok(cp.checks.distinctFirstSources, `${route.id} 首路径来源不同`);
+      ok(cp.checks.firstEchoesDistinguishable, `${route.id} 时刻可区分`);
+      ok(cp.pass, `${route.id} 整体通过`);
+    }
   });
 
   return checks;

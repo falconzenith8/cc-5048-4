@@ -1,0 +1,86 @@
+// 展项场景规格（唯一真源）。scenes/echo-hunt.json 由 scripts/build-exhibit.mjs 从此生成，
+// 两者由 checks.js 的“规格一致”断言互相约束，避免漂移。
+export const ECHO_HUNT_SPEC = {
+  format: 'echo-hunt-gallery/v1',
+  title: '听声找隔板',
+  note: '两个展厅共用同一房间外壳与同一声源 S。起始听点 R0 处，两厅首个可闻回波时刻相同，但来源不同：A 厅来自南墙单次反射，B 厅来自「南墙→隔板背面」两次反射。移动听点或转动隔板，可找到排除其中一种解释的位置。',
+  room: { dims: [10, 8, 3.6] },
+  source: [4.2, 2.0, 1.7],
+  listenerStart: [7.0, 2.3, 1.9],
+  materials: {
+    room: { absorption: 0.92 },
+    floor: { absorption: 0.92 },
+    ceiling: { absorption: 0.92 },
+    walls: { south: 0.10 },
+    partition: { front: 0.08, back: 0.08 },
+    screen: { front: 0.96, back: 0.96 },
+  },
+  echoAudibilityThresholdDb: -20,
+  galleries: {
+    A: {
+      title: 'A 厅 · 侧墙回声',
+      hypothesis: '南墙单次反射',
+      panels: [],
+    },
+    B: {
+      title: 'B 厅 · 隔板回声',
+      hypothesis: '南墙→隔板背面两次反射',
+      panels: [
+        {
+          id: 'partition',
+          role: 'partition',
+          center: [6.055, 0.9, 1.8],
+          width: 2.08,
+          height: 2.4,
+          angleDeg: 56.5,
+        },
+      ],
+    },
+  },
+  routes: [
+    {
+      id: 'route-sidewall',
+      gallery: 'A',
+      title: '路线 1 · 侧墙对照位',
+      summary: '空房间里，南墙单次反射始终存在；把隔板放进来后它被挡住，只有绕经隔板背面的双反射还留着。',
+      listenerStart: [7.0, 2.3, 1.9],
+      listenerSweep: [[7.0, 2.3, 1.9], [7.0, 2.6, 1.9], [7.0, 2.3, 1.4]],
+      panelSweep: null,
+      checkpoint: {
+        listener: [6.04, 2.85, 1.27],
+        screen: {
+          id: 'screen',
+          role: 'screen',
+          center: [5.10, 2.41, 1.8],
+          width: 0.75,
+          height: 2.17,
+          angleDeg: 117.6,
+        },
+        expectedFirstEcho: { gallery: 'A', faces: ['南墙 y=0'], distance: 5.2051 },
+        note: '屏风挡住 S→R 的直达声；A 厅首条合法路径仍是南墙单次反射（约 15.175 ms），B 厅只剩绕隔板的路径（约 10.781 ms），凭到达时刻即可辨认展厅。',
+      },
+    },
+    {
+      id: 'route-partition',
+      gallery: 'B',
+      title: '路线 2 · 隔板角度扫描位',
+      summary: '起始听点处，只有隔板转到 56.5° 附近时「南墙→隔板背面」双反射才在几何上存活，且与 A 厅南墙回声同刻；转开它，这个解释立刻失效。',
+      listenerStart: [7.0, 2.3, 1.9],
+      listenerSweep: [[7.0, 2.3, 1.9]],
+      panelSweep: [54.5, 55.5, 56.5, 57.5, 58.5],
+      checkpoint: {
+        listener: [6.35, 2.27, 1.33],
+        screen: {
+          id: 'screen',
+          role: 'screen',
+          center: [5.68, 2.18, 1.8],
+          width: 0.64,
+          height: 2.61,
+          angleDeg: 96.2,
+        },
+        expectedFirstEcho: { gallery: 'B', faces: ['partition:正面'], distance: 3.0360 },
+        note: '屏风挡住直达声后，A 厅首条合法路径是南墙单次反射（约 13.980 ms），B 厅只剩经隔板正面的路径（约 8.856 ms）；到达时刻差约 5.1 ms，凭它即可辨认展厅。',
+      },
+    },
+  ],
+};

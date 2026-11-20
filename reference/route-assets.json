@@ -1,0 +1,1526 @@
+{
+  "title": "听声找隔板",
+  "sampleRate": 48000,
+  "routes": [
+    {
+      "routeId": "route-sidewall",
+      "gallery": "A",
+      "title": "路线 1 · 侧墙对照位",
+      "frames": [
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": null,
+          "direct": {
+            "valid": true,
+            "occluder": null,
+            "timeMs": 8.230667179879358
+          },
+          "first": {
+            "faces": [
+              "南墙 y=0"
+            ],
+            "surfaces": [
+              "南墙 y=0"
+            ],
+            "order": 1,
+            "passesPartition": false,
+            "distance": 5.135172830587107,
+            "timeMs": 14.971349360312265,
+            "sampleNearest": 719
+          },
+          "peaks": [
+            {
+              "label": "直达声",
+              "timeMs": 8.230667179879358,
+              "sampleFloat": 395.0720246342092,
+              "sampleNearest": 395,
+              "gain": 0.3542181734879073
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928792,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.017503333471749444
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928794,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.01750333347174944
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 14.971349360312265,
+              "sampleFloat": 718.6247692949888,
+              "sampleNearest": 719,
+              "gain": 0.17526187135109578
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 21.99765932319257,
+              "sampleFloat": 1055.8876475132433,
+              "sampleNearest": 1056,
+              "gain": 0.0008482217064161651
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 23.08367838695926,
+              "sampleFloat": 1108.0165625740444,
+              "sampleNearest": 1108,
+              "gain": 0.0008083153739839355
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 25.67750223419333,
+              "sampleFloat": 1232.52010724128,
+              "sampleNearest": 1233,
+              "gain": 0.009083288143692986
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 28.561014345250115,
+              "sampleFloat": 1370.9286885720055,
+              "sampleNearest": 1371,
+              "gain": 0.007349617695845541
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 32.669976876301575,
+              "sampleFloat": 1568.1588900624756,
+              "sampleNearest": 1568,
+              "gain": 0.0071391587599403915
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.98177823582814,
+              "sampleFloat": 1679.1253553197507,
+              "sampleNearest": 1679,
+              "gain": 0.0060006250976732045
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 35.07883544735359,
+              "sampleFloat": 1683.7841014729722,
+              "sampleNearest": 1684,
+              "gain": 0.006648913757514553
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 42.68623824025222,
+              "sampleFloat": 2048.9394355321065,
+              "sampleNearest": 2049,
+              "gain": 0.0004371172747352781
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 46.4984873430968,
+              "sampleFloat": 2231.9273924686463,
+              "sampleNearest": 2232,
+              "gain": 0.004514394949974913
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 47.224021463812754,
+              "sampleFloat": 2266.7530302630125,
+              "sampleNearest": 2267,
+              "gain": 0.00039511442587705
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 48.22143333042439,
+              "sampleFloat": 2314.6287998603707,
+              "sampleNearest": 2315,
+              "gain": 0.004353096163790476
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 50.156789080765535,
+              "sampleFloat": 2407.5258758767454,
+              "sampleNearest": 2408,
+              "gain": 0.0003720112963817156
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 66.48061428274227,
+              "sampleFloat": 3191.069485571629,
+              "sampleNearest": 3191,
+              "gain": 0.00028066666244874836
+            }
+          ]
+        },
+        {
+          "listener": [
+            7,
+            2.6,
+            1.9
+          ],
+          "panelAngle": null,
+          "direct": {
+            "valid": true,
+            "occluder": null,
+            "timeMs": 8.368921337846835
+          },
+          "first": {
+            "faces": [
+              "南墙 y=0"
+            ],
+            "surfaces": [
+              "南墙 y=0"
+            ],
+            "order": 1,
+            "passesPartition": false,
+            "distance": 5.388877434122993,
+            "timeMs": 15.711012927472282,
+            "sampleNearest": 754
+          },
+          "peaks": [
+            {
+              "label": "直达声",
+              "timeMs": 8.368921337846835,
+              "sampleFloat": 401.7082242166481,
+              "sampleNearest": 402,
+              "gain": 0.34836650714580886
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.411078717201164,
+              "sampleFloat": 643.7317784256559,
+              "sampleNearest": 644,
+              "gain": 0.01739130434782608
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.411078717201164,
+              "sampleFloat": 643.7317784256559,
+              "sampleNearest": 644,
+              "gain": 0.01739130434782608
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 15.711012927472282,
+              "sampleFloat": 754.1286205186695,
+              "sampleNearest": 754,
+              "gain": 0.1670106642806712
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.88528832734886,
+              "sampleFloat": 906.4938397127453,
+              "sampleNearest": 906,
+              "gain": 0.011115135379699886
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.88528832734886,
+              "sampleFloat": 906.4938397127453,
+              "sampleNearest": 906,
+              "gain": 0.011115135379699886
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 22.04976140080354,
+              "sampleFloat": 1058.38854723857,
+              "sampleNearest": 1058,
+              "gain": 0.0008462174165567113
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 23.133334606270985,
+              "sampleFloat": 1110.4000611010074,
+              "sampleNearest": 1110,
+              "gain": 0.0008065803069835772
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 25.72215160363006,
+              "sampleFloat": 1234.663276974243,
+              "sampleNearest": 1235,
+              "gain": 0.009067521068905557
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.774939624057268,
+              "sampleFloat": 1333.1971019547489,
+              "sampleNearest": 1333,
+              "gain": 0.0006717887556492998
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.774939624057268,
+              "sampleFloat": 1333.1971019547489,
+              "sampleNearest": 1333,
+              "gain": 0.0006717887556492998
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 28.9555895462044,
+              "sampleFloat": 1389.8682982178113,
+              "sampleNearest": 1390,
+              "gain": 0.007249465119962119
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 32.70508142829191,
+              "sampleFloat": 1569.843908558012,
+              "sampleNearest": 1570,
+              "gain": 0.007131495823206688
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 34.228944889654045,
+              "sampleFloat": 1642.989354703394,
+              "sampleNearest": 1643,
+              "gain": 0.006814003538683304
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.342983842862324,
+              "sampleFloat": 1648.4632244573916,
+              "sampleNearest": 1648,
+              "gain": 0.000543310162380018
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.342983842862324,
+              "sampleFloat": 1648.4632244573916,
+              "sampleNearest": 1648,
+              "gain": 0.000543310162380018
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 35.30466589672444,
+              "sampleFloat": 1694.6239630427729,
+              "sampleNearest": 1695,
+              "gain": 0.005945744878515455
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 35.79719061964042,
+              "sampleFloat": 1718.2651497427398,
+              "sampleNearest": 1718,
+              "gain": 0.0005212390080142913
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 35.79719061964042,
+              "sampleFloat": 1718.2651497427398,
+              "sampleNearest": 1718,
+              "gain": 0.0005212390080142913
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 41.99060498516345,
+              "sampleFloat": 2015.5490392878457,
+              "sampleNearest": 2016,
+              "gain": 0.00044435873536169846
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 45.63776543288512,
+              "sampleFloat": 2190.6127407784857,
+              "sampleNearest": 2191,
+              "gain": 0.004599535811012612
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 46.59618198019137,
+              "sampleFloat": 2236.6167350491855,
+              "sampleNearest": 2237,
+              "gain": 0.0004004382190843876
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 49.08360467809903,
+              "sampleFloat": 2356.0130245487535,
+              "sampleNearest": 2356,
+              "gain": 0.004276632448244189
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 50.17966174682253,
+              "sampleFloat": 2408.6237638474818,
+              "sampleNearest": 2409,
+              "gain": 0.0003718417278781553
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 66.49787242870167,
+              "sampleFloat": 3191.89787657768,
+              "sampleNearest": 3192,
+              "gain": 0.00028059382122767515
+            }
+          ]
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.4
+          ],
+          "panelAngle": null,
+          "direct": {
+            "valid": true,
+            "occluder": null,
+            "timeMs": 8.256444465601337
+          },
+          "first": {
+            "faces": [
+              "南墙 y=0"
+            ],
+            "surfaces": [
+              "南墙 y=0"
+            ],
+            "order": 1,
+            "passesPartition": false,
+            "distance": 5.140038910358559,
+            "timeMs": 14.98553618180338,
+            "sampleNearest": 719
+          },
+          "peaks": [
+            {
+              "label": "直达声",
+              "timeMs": 8.256444465601337,
+              "sampleFloat": 396.3093343488642,
+              "sampleNearest": 396,
+              "gain": 0.3531122757732244
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 12.210140869604622,
+              "sampleFloat": 586.0867617410219,
+              "sampleNearest": 586,
+              "gain": 0.01910183953602911
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 14.501259609849434,
+              "sampleFloat": 696.0604612727728,
+              "sampleNearest": 696,
+              "gain": 0.01608385463598497
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 14.98553618180338,
+              "sampleFloat": 719.3057367265621,
+              "sampleNearest": 719,
+              "gain": 0.1750959507692166
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 17.47812803186223,
+              "sampleFloat": 838.9501455293871,
+              "sampleNearest": 839,
+              "gain": 0.012010012517386462
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 19.148993438685743,
+              "sampleFloat": 919.1516850569157,
+              "sampleNearest": 919,
+              "gain": 0.01096206634125598
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 21.727452925815406,
+              "sampleFloat": 1042.9177404391394,
+              "sampleNearest": 1043,
+              "gain": 0.0008587703396245936
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 23.356390964862662,
+              "sampleFloat": 1121.106766313408,
+              "sampleNearest": 1121,
+              "gain": 0.0007988773674986983
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 25.68577649156473,
+              "sampleFloat": 1232.917271595107,
+              "sampleNearest": 1233,
+              "gain": 0.009080362109360165
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.215395988606332,
+              "sampleFloat": 1306.339007453104,
+              "sampleNearest": 1306,
+              "gain": 0.000685600611363192
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 28.31742871507424,
+              "sampleFloat": 1359.2365783235634,
+              "sampleNearest": 1359,
+              "gain": 0.0006589190111864628
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 28.56845346561831,
+              "sampleFloat": 1371.2857663496789,
+              "sampleNearest": 1371,
+              "gain": 0.007347703882388141
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 32.6764805645543,
+              "sampleFloat": 1568.4710670986067,
+              "sampleNearest": 1568,
+              "gain": 0.0071377378338749395
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 33.89204990743,
+              "sampleFloat": 1626.81839555664,
+              "sampleNearest": 1627,
+              "gain": 0.0005505389074795786
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.78318612698364,
+              "sampleFloat": 1669.5929340952148,
+              "sampleNearest": 1670,
+              "gain": 0.0005364342432622903
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.98785219941736,
+              "sampleFloat": 1679.4169055720336,
+              "sampleNearest": 1679,
+              "gain": 0.005999583376731086
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 35.08489260821709,
+              "sampleFloat": 1684.0748451944203,
+              "sampleNearest": 1684,
+              "gain": 0.006647765869144293
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.21972327575345,
+              "sampleFloat": 1738.5467172361657,
+              "sampleNearest": 1739,
+              "gain": 0.0005151583292402091
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 37.054923348845534,
+              "sampleFloat": 1778.6363207445856,
+              "sampleNearest": 1779,
+              "gain": 0.0005035469093437267
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 42.69121605308506,
+              "sampleFloat": 2049.1783705480825,
+              "sampleNearest": 2049,
+              "gain": 0.00043706630668656
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 46.50305708427942,
+              "sampleFloat": 2232.146740045412,
+              "sampleNearest": 2232,
+              "gain": 0.004513951331473013
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 47.228521003756434,
+              "sampleFloat": 2266.9690081803087,
+              "sampleNearest": 2267,
+              "gain": 0.00039507678266689284
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 48.2258398105018,
+              "sampleFloat": 2314.8403109040864,
+              "sampleNearest": 2315,
+              "gain": 0.004352698413713003
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 50.161025546533786,
+              "sampleFloat": 2407.729226233622,
+              "sampleNearest": 2408,
+              "gain": 0.0003719798773047459
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 66.48381057369059,
+              "sampleFloat": 3191.222907537148,
+              "sampleNearest": 3191,
+              "gain": 0.00028065316905381604
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "routeId": "route-partition",
+      "gallery": "B",
+      "title": "路线 2 · 隔板角度扫描位",
+      "frames": [
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 54.5,
+          "direct": {
+            "valid": true,
+            "occluder": null,
+            "timeMs": 8.230667179879358
+          },
+          "first": null,
+          "peaks": [
+            {
+              "label": "直达声",
+              "timeMs": 8.230667179879358,
+              "sampleFloat": 395.0720246342092,
+              "sampleNearest": 395,
+              "gain": 0.3542181734879073
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928792,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.017503333471749444
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928794,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.01750333347174944
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 21.99765932319257,
+              "sampleFloat": 1055.8876475132433,
+              "sampleNearest": 1056,
+              "gain": 0.0008482217064161651
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 23.08367838695926,
+              "sampleFloat": 1108.0165625740444,
+              "sampleNearest": 1108,
+              "gain": 0.0008083153739839355
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 25.67750223419333,
+              "sampleFloat": 1232.52010724128,
+              "sampleNearest": 1233,
+              "gain": 0.009083288143692986
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 32.669976876301575,
+              "sampleFloat": 1568.1588900624756,
+              "sampleNearest": 1568,
+              "gain": 0.0071391587599403915
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.98177823582814,
+              "sampleFloat": 1679.1253553197507,
+              "sampleNearest": 1679,
+              "gain": 0.0060006250976732045
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 35.07883544735359,
+              "sampleFloat": 1683.7841014729722,
+              "sampleNearest": 1684,
+              "gain": 0.006648913757514553
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 42.68623824025222,
+              "sampleFloat": 2048.9394355321065,
+              "sampleNearest": 2049,
+              "gain": 0.0004371172747352781
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 46.4984873430968,
+              "sampleFloat": 2231.9273924686463,
+              "sampleNearest": 2232,
+              "gain": 0.004514394949974913
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 47.224021463812754,
+              "sampleFloat": 2266.7530302630125,
+              "sampleNearest": 2267,
+              "gain": 0.00039511442587705
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 50.156789080765535,
+              "sampleFloat": 2407.5258758767454,
+              "sampleNearest": 2408,
+              "gain": 0.0003720112963817156
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 66.48061428274227,
+              "sampleFloat": 3191.069485571629,
+              "sampleNearest": 3191,
+              "gain": 0.00028066666244874836
+            }
+          ]
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 55.5,
+          "direct": {
+            "valid": true,
+            "occluder": null,
+            "timeMs": 8.230667179879358
+          },
+          "first": null,
+          "peaks": [
+            {
+              "label": "直达声",
+              "timeMs": 8.230667179879358,
+              "sampleFloat": 395.0720246342092,
+              "sampleNearest": 395,
+              "gain": 0.3542181734879073
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928792,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.017503333471749444
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928794,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.01750333347174944
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 21.99765932319257,
+              "sampleFloat": 1055.8876475132433,
+              "sampleNearest": 1056,
+              "gain": 0.0008482217064161651
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 23.08367838695926,
+              "sampleFloat": 1108.0165625740444,
+              "sampleNearest": 1108,
+              "gain": 0.0008083153739839355
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 25.67750223419333,
+              "sampleFloat": 1232.52010724128,
+              "sampleNearest": 1233,
+              "gain": 0.009083288143692986
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 32.669976876301575,
+              "sampleFloat": 1568.1588900624756,
+              "sampleNearest": 1568,
+              "gain": 0.0071391587599403915
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.98177823582814,
+              "sampleFloat": 1679.1253553197507,
+              "sampleNearest": 1679,
+              "gain": 0.0060006250976732045
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 35.07883544735359,
+              "sampleFloat": 1683.7841014729722,
+              "sampleNearest": 1684,
+              "gain": 0.006648913757514553
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 42.68623824025222,
+              "sampleFloat": 2048.9394355321065,
+              "sampleNearest": 2049,
+              "gain": 0.0004371172747352781
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 46.4984873430968,
+              "sampleFloat": 2231.9273924686463,
+              "sampleNearest": 2232,
+              "gain": 0.004514394949974913
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 47.224021463812754,
+              "sampleFloat": 2266.7530302630125,
+              "sampleNearest": 2267,
+              "gain": 0.00039511442587705
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 50.156789080765535,
+              "sampleFloat": 2407.5258758767454,
+              "sampleNearest": 2408,
+              "gain": 0.0003720112963817156
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 66.48061428274227,
+              "sampleFloat": 3191.069485571629,
+              "sampleNearest": 3191,
+              "gain": 0.00028066666244874836
+            }
+          ]
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 56.5,
+          "direct": {
+            "valid": true,
+            "occluder": null,
+            "timeMs": 8.230667179879358
+          },
+          "first": {
+            "faces": [
+              "南墙 y=0",
+              "partition:背面"
+            ],
+            "surfaces": [
+              "南墙 y=0",
+              "partition"
+            ],
+            "order": 2,
+            "passesPartition": true,
+            "distance": 5.1354933817512345,
+            "timeMs": 14.97228391181118,
+            "sampleNearest": 719
+          },
+          "peaks": [
+            {
+              "label": "直达声",
+              "timeMs": 8.230667179879358,
+              "sampleFloat": 395.0720246342092,
+              "sampleNearest": 395,
+              "gain": 0.3542181734879073
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928792,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.017503333471749444
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928794,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.01750333347174944
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 14.97228391181118,
+              "sampleFloat": 718.6696277669366,
+              "sampleNearest": 719,
+              "gain": 0.16123085718351116
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 21.99765932319257,
+              "sampleFloat": 1055.8876475132433,
+              "sampleNearest": 1056,
+              "gain": 0.0008482217064161651
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 23.08367838695926,
+              "sampleFloat": 1108.0165625740444,
+              "sampleNearest": 1108,
+              "gain": 0.0008083153739839355
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 25.67750223419333,
+              "sampleFloat": 1232.52010724128,
+              "sampleNearest": 1233,
+              "gain": 0.009083288143692986
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 32.669976876301575,
+              "sampleFloat": 1568.1588900624756,
+              "sampleNearest": 1568,
+              "gain": 0.0071391587599403915
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.98177823582814,
+              "sampleFloat": 1679.1253553197507,
+              "sampleNearest": 1679,
+              "gain": 0.0060006250976732045
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 35.07883544735359,
+              "sampleFloat": 1683.7841014729722,
+              "sampleNearest": 1684,
+              "gain": 0.006648913757514553
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 42.68623824025222,
+              "sampleFloat": 2048.9394355321065,
+              "sampleNearest": 2049,
+              "gain": 0.0004371172747352781
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 43.831200031393735,
+              "sampleFloat": 2103.8976015068993,
+              "sampleNearest": 2104,
+              "gain": 0.004895536953620466
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 46.4984873430968,
+              "sampleFloat": 2231.9273924686463,
+              "sampleNearest": 2232,
+              "gain": 0.004514394949974913
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 47.224021463812754,
+              "sampleFloat": 2266.7530302630125,
+              "sampleNearest": 2267,
+              "gain": 0.00039511442587705
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 50.156789080765535,
+              "sampleFloat": 2407.5258758767454,
+              "sampleNearest": 2408,
+              "gain": 0.0003720112963817156
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 66.48061428274227,
+              "sampleFloat": 3191.069485571629,
+              "sampleNearest": 3191,
+              "gain": 0.00028066666244874836
+            }
+          ]
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 57.5,
+          "direct": {
+            "valid": true,
+            "occluder": null,
+            "timeMs": 8.230667179879358
+          },
+          "first": {
+            "faces": [
+              "南墙 y=0"
+            ],
+            "surfaces": [
+              "南墙 y=0"
+            ],
+            "order": 1,
+            "passesPartition": false,
+            "distance": 5.135172830587107,
+            "timeMs": 14.971349360312265,
+            "sampleNearest": 719
+          },
+          "peaks": [
+            {
+              "label": "直达声",
+              "timeMs": 8.230667179879358,
+              "sampleFloat": 395.0720246342092,
+              "sampleNearest": 395,
+              "gain": 0.3542181734879073
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928792,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.017503333471749444
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928794,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.01750333347174944
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 14.971349360312265,
+              "sampleFloat": 718.6247692949888,
+              "sampleNearest": 719,
+              "gain": 0.17526187135109578
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 21.99765932319257,
+              "sampleFloat": 1055.8876475132433,
+              "sampleNearest": 1056,
+              "gain": 0.0008482217064161651
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 23.08367838695926,
+              "sampleFloat": 1108.0165625740444,
+              "sampleNearest": 1108,
+              "gain": 0.0008083153739839355
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 25.67750223419333,
+              "sampleFloat": 1232.52010724128,
+              "sampleNearest": 1233,
+              "gain": 0.009083288143692986
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 32.669976876301575,
+              "sampleFloat": 1568.1588900624756,
+              "sampleNearest": 1568,
+              "gain": 0.0071391587599403915
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.98177823582814,
+              "sampleFloat": 1679.1253553197507,
+              "sampleNearest": 1679,
+              "gain": 0.0060006250976732045
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 35.07883544735359,
+              "sampleFloat": 1683.7841014729722,
+              "sampleNearest": 1684,
+              "gain": 0.006648913757514553
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 42.68623824025222,
+              "sampleFloat": 2048.9394355321065,
+              "sampleNearest": 2049,
+              "gain": 0.0004371172747352781
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 43.92464065286911,
+              "sampleFloat": 2108.3827513377173,
+              "sampleNearest": 2108,
+              "gain": 0.004885122707570805
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 46.4984873430968,
+              "sampleFloat": 2231.9273924686463,
+              "sampleNearest": 2232,
+              "gain": 0.004514394949974913
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 47.224021463812754,
+              "sampleFloat": 2266.7530302630125,
+              "sampleNearest": 2267,
+              "gain": 0.00039511442587705
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 50.156789080765535,
+              "sampleFloat": 2407.5258758767454,
+              "sampleNearest": 2408,
+              "gain": 0.0003720112963817156
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 66.48061428274227,
+              "sampleFloat": 3191.069485571629,
+              "sampleNearest": 3191,
+              "gain": 0.00028066666244874836
+            }
+          ]
+        },
+        {
+          "listener": [
+            7,
+            2.3,
+            1.9
+          ],
+          "panelAngle": 58.5,
+          "direct": {
+            "valid": true,
+            "occluder": null,
+            "timeMs": 8.230667179879358
+          },
+          "first": null,
+          "peaks": [
+            {
+              "label": "直达声",
+              "timeMs": 8.230667179879358,
+              "sampleFloat": 395.0720246342092,
+              "sampleNearest": 395,
+              "gain": 0.3542181734879073
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928792,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.017503333471749444
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 13.325241844928794,
+              "sampleFloat": 639.611608556582,
+              "sampleNearest": 640,
+              "gain": 0.01750333347174944
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 18.274558535527486,
+              "sampleFloat": 877.1788097053194,
+              "sampleNearest": 877,
+              "gain": 0.011486599582422666
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 21.99765932319257,
+              "sampleFloat": 1055.8876475132433,
+              "sampleNearest": 1056,
+              "gain": 0.0008482217064161651
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 23.08367838695926,
+              "sampleFloat": 1108.0165625740444,
+              "sampleNearest": 1108,
+              "gain": 0.0008083153739839355
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 25.67750223419333,
+              "sampleFloat": 1232.52010724128,
+              "sampleNearest": 1233,
+              "gain": 0.009083288143692986
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 27.733595313029678,
+              "sampleFloat": 1331.2125750254245,
+              "sampleNearest": 1331,
+              "gain": 0.0006727902357295026
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 32.669976876301575,
+              "sampleFloat": 1568.1588900624756,
+              "sampleNearest": 1568,
+              "gain": 0.0071391587599403915
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.30955518653627,
+              "sampleFloat": 1646.858648953741,
+              "sampleNearest": 1647,
+              "gain": 0.0005438395230376513
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 34.98177823582814,
+              "sampleFloat": 1679.1253553197507,
+              "sampleNearest": 1679,
+              "gain": 0.0060006250976732045
+            },
+            {
+              "label": "1阶反射",
+              "timeMs": 35.07883544735359,
+              "sampleFloat": 1683.7841014729722,
+              "sampleNearest": 1684,
+              "gain": 0.006648913757514553
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 36.610693579095276,
+              "sampleFloat": 1757.3132917965734,
+              "sampleNearest": 1757,
+              "gain": 0.0005096568872143438
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 42.68623824025222,
+              "sampleFloat": 2048.9394355321065,
+              "sampleNearest": 2049,
+              "gain": 0.0004371172747352781
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 44.01201214830727,
+              "sampleFloat": 2112.576583118749,
+              "sampleNearest": 2113,
+              "gain": 0.004875424889735957
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 46.4984873430968,
+              "sampleFloat": 2231.9273924686463,
+              "sampleNearest": 2232,
+              "gain": 0.004514394949974913
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 47.224021463812754,
+              "sampleFloat": 2266.7530302630125,
+              "sampleNearest": 2267,
+              "gain": 0.00039511442587705
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 50.156789080765535,
+              "sampleFloat": 2407.5258758767454,
+              "sampleNearest": 2408,
+              "gain": 0.0003720112963817156
+            },
+            {
+              "label": "2阶反射",
+              "timeMs": 66.48061428274227,
+              "sampleFloat": 3191.069485571629,
+              "sampleNearest": 3191,
+              "gain": 0.00028066666244874836
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

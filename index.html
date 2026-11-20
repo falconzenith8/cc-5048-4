@@ -35,6 +35,18 @@
   .tag { display:inline-block; background:#21262d; border:1px solid var(--line); border-radius:10px; padding:1px 8px; font-size:11px; color:var(--muted); }
   #status { margin-top:8px; font-size:12px; min-height:16px; }
   #testOut { display:none; white-space:pre-wrap; background:#0d1117; border:1px solid var(--line); border-radius:6px; padding:8px; margin-top:8px; font-size:11px; }
+  .exhibit { margin:14px 20px; }
+  .exhibit .layout { padding:0; }
+  .exhibit h2 .badge { font-size:11px; color:var(--muted); font-weight:400; margin-left:8px; }
+  .echoHit { cursor:pointer; }
+  .echoList { list-style:none; margin:0; padding:0; }
+  .echoList li { border:1px solid var(--line); border-radius:6px; padding:6px 8px; margin-bottom:6px; cursor:pointer; }
+  .echoList li.active { border-color:var(--accent); background:#0f1a2b; }
+  .echoList .seq { color:var(--fg); }
+  .kv { display:grid; grid-template-columns:auto 1fr; gap:2px 10px; margin-top:6px; }
+  .kv span:nth-child(odd) { color:var(--muted); }
+  .explain { font-size:12px; line-height:1.6; }
+  .swatch { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:middle; }
 </style>
 </head>
 <body>
@@ -109,6 +121,11 @@
       <canvas id="view3d" width="820" height="420"></canvas>
     </div>
 
+    <div class="panel" id="exhibitPanel">
+      <h2>听声找隔板：点选回波求值 <span class="badge">展项</span></h2>
+      <div id="exhibitMount"></div>
+    </div>
+
     <div class="panel">
       <h2>脉冲响应（峰标注到达时间）</h2>
       <canvas id="irChart" width="820" height="220"></canvas>
@@ -171,6 +188,6 @@
     </div>
   </div>
 </div>
-<script type="module" src="./main.js"></script>
+<script type="module" src="./src/main.js"></script>
 </body>
 </html>
